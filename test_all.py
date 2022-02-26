@@ -135,6 +135,7 @@ def test_create_customer_successful_with_email_and_id():
 def test_create_customer_fail_same_id():
     customer_id = str(time.time_ns())
     assert create_customer("oldid" + customer_id, customer_id + "@gmail.com").status_code == 202
+    time.sleep(1)
     assert create_customer("oldid" + customer_id, customer_id + "@gmail.com").status_code == 422
 
 
