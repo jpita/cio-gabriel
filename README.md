@@ -53,11 +53,12 @@ Install PyCharm
 1. Make sure you have python 3.9 as an interpreter on pycharm or installed on the terminal
 2. Install the requests and pytest package.  
 Run `pip install -r requirements.txt` in the terminal
-3. Get the bearer token from the cookie `_access` after login on the platform (if you don’t have an account, create one)  
-On the code, on line 16, insert that token   
-On line 19 and 20 insert your email and password  
+3. Get the bearer token from the cookie `_access` after login on the [customer.io](https://fly.customer.io/login) (if you don’t have an account, create one)  
+On the code, on line 17, insert that token replacing this entire text `os.environ['YOUR_ACCESS_TOKEN_HERE']` with your token (the entire text, not just the big letters)  
+On line 19 and 20 insert your email and password in a similar way. 
 4. On the left side of the UI, click People.   
 Then copy the number on the URL between “env/” and “/people”
 https://fly.customer.io/env/COPYTHISNUMBER/people  
-On the code, on line 12, insert that number  
-5. run `pytest` and the tests should start running
+On the code, on line 12, insert that number similarly to the steps before. 
+5. run `pytest` and the tests should start running.  
+If the tests don't start, first try `python -m pytest` , then `python3 -m pytest` and if nothing else works, then install pycharm, install the pytest plugin and run the tests in the UI of the IDE.
