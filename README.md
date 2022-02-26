@@ -4,6 +4,8 @@
 ### This was fun!
 I actually had a lot of fun (and headaches) doing this test.  
 It has been a while since I used python and did any API testing.  
+I took advantage of it and learned about github actions as well.  
+With github actions I found a [flaky test](https://github.com/jpita/cio-gabriel/actions), it seems the 1 second wait is not enough for the API to return the expected result updated
 
 ### Confusing test description
 From the test description: 
