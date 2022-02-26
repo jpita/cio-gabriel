@@ -9,15 +9,15 @@ import requests
 BASE_URL = "https://fly-eu.customer.io/v1/"
 LOGIN_URL = "login_email"
 # INSERT YOUR ENVIRONMENT ID HERE
-ENVIRONMENT_ID = YOUR_ENVIRONMENT_ID_HERE
+ENVIRONMENT_ID = os.environ['YOUR_ACCESS_TOKEN_HERE']
 CUSTOMERS_URL = "environments/" + ENVIRONMENT_ID + "/customers"
 SEGMENTS_URL = "environments/" + ENVIRONMENT_ID + "/segments"
 # INSERT YOUR ACCESS TOKEN HERE
 token = YOUR_ACCESS_TOKEN_HERE
 headers = {"Authorization": "Bearer " + token}
 # INSERT YOUR EMAIL AND PASSWORD HERE
-valid_email = YOUR_EMAIL_HERE
-valid_password = YOUR_PASSWORD_HERE
+valid_email = os.environ['YOUR_EMAIL_HERE']
+valid_password = os.environ['YOUR_PASSWORD_HERE']
 
 
 def get_login_token():
