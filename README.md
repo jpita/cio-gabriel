@@ -3,9 +3,9 @@
 ## Notes
 ### This was fun!
 I actually had a lot of fun (and headaches) doing this test.  
-It has been a while since I used python and did any API testing.  
+It has been a while since I used python and did API testing.  
 I took advantage of it and learned about github actions as well.  
-With github actions I found a [flaky test](https://github.com/jpita/cio-gabriel/actions), it seems the 1 second wait is not enough for the API to return the expected result updated
+With github actions I found a [flaky test](https://github.com/jpita/cio-gabriel/actions), it seems the 1 second wait sometimes is not enough for the API to return the expected result.
 
 ### Confusing test description
 From the test description: 
@@ -51,15 +51,15 @@ Video showing the issue: https://share.getcloudapp.com/NQux6erA
 0. (optional step if you don’t have any python environment setup either with PyCharm or in the terminal)  
 Install PyCharm
 1. Make sure you have python 3.9 as an interpreter on pycharm or installed on the terminal
-2. Install the requests and pytest package.  
-Run `pip install -r requirements.txt` in the terminal
+2. After cloning this repo and `cd` into it, install the requests and pytest package.  
+Run `pip install -r requirements.txt` in the terminal in the root folder of this project.
 3. Now login on the [customer.io](https://fly.customer.io/login) platform with your account and write down the email and password (if you don’t have an account, create one)  
 4. On the left side of the UI, click People.   
 Then write down the environment number on the URL between `env/` and `/people`
 https://fly.customer.io/env/COPYTHISNUMBER/people
 5. Now open the `test_all.py` file on your favorite editor/IDE.  
 If you are using PyCharm you should open the folder where the file is present as a new project.
-6. On line 13, insert the environment number you got from step 4 replacing this entire text `os.environ['YOUR_ENVIRONMENT_ID_HERE']` with your email (the entire text, not just the big letters) surrounded by "".   
+6. On line 13, insert the environment number you got from step 4 replacing this entire text `os.environ['YOUR_ENVIRONMENT_ID_HERE']` with the environment number (the entire text, not just the big letters) surrounded by "".   
 example:  
 from `ENVIRONMENT_ID = os.environ['YOUR_ENVIRONMENT_ID_HERE']`   
 to `ENVIRONMENT_ID = "2143543"`
