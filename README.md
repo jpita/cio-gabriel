@@ -48,17 +48,28 @@ Video showing the issue: https://share.getcloudapp.com/NQux6erA
 
 
 ## Installation and execution instructions
-0. (optional step if you don’t have any python environment setup either with pycharm or in the terminal)  
+0. (optional step if you don’t have any python environment setup either with PyCharm or in the terminal)  
 Install PyCharm
 1. Make sure you have python 3.9 as an interpreter on pycharm or installed on the terminal
 2. Install the requests and pytest package.  
 Run `pip install -r requirements.txt` in the terminal
-3. Get the bearer token from the cookie `_access` after login on the [customer.io](https://fly.customer.io/login) (if you don’t have an account, create one)  
-On the code, on line 17, insert that token replacing this entire text `os.environ['YOUR_ACCESS_TOKEN_HERE']` with your token (the entire text, not just the big letters)  
-On line 19 and 20 insert your email and password in a similar way. 
+3. Now login on the [customer.io](https://fly.customer.io/login) platform with your account and write down the email and password (if you don’t have an account, create one)  
 4. On the left side of the UI, click People.   
-Then copy the number on the URL between “env/” and “/people”
-https://fly.customer.io/env/COPYTHISNUMBER/people  
-On the code, on line 12, insert that number similarly to the steps before. 
-5. run `pytest` and the tests should start running.  
-If the tests don't start, first try `python -m pytest` , then `python3 -m pytest` and if nothing else works, then install pycharm, install the pytest plugin and run the tests in the UI of the IDE.
+Then write down the environment number on the URL between `env/` and `/people`
+https://fly.customer.io/env/COPYTHISNUMBER/people
+5. Now open the `test_all.py` file on your favorite editor/IDE.  
+If you are using PyCharm you should open the folder where the file is present as a new project.
+6. On line 13, insert the environment number you got from step 4 replacing this entire text `os.environ['YOUR_ENVIRONMENT_ID_HERE']` with your email (the entire text, not just the big letters) surrounded by "".   
+example:  
+from `ENVIRONMENT_ID = os.environ['YOUR_ENVIRONMENT_ID_HERE']`   
+to `ENVIRONMENT_ID = "2143543"`
+7. On line 20 insert your email replacing this entire text `os.environ['YOUR_EMAIL_HERE']` with your email (the entire text, not just the big letters) surrounded by "".   
+example:  
+from `valid_email = os.environ['YOUR_EMAIL_HERE']`   
+to `valid_email = "blabla@gmail.com"`  
+8. On line 21 do the same for the password:  
+from `valid_password = os.environ['YOUR_PASSWORD_HERE']`     
+to `valid_password = "uramazinglysecurepassword"`
+9. Save the file
+10. Run `pytest` in the terminal and the tests should start running.  
+If the tests don't start, try `python -m pytest` , or `python3 -m pytest` and if nothing else works, then install pycharm, install the pytest plugin and run the tests in the UI of the IDE.

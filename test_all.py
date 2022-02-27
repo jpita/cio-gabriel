@@ -14,15 +14,20 @@ ENVIRONMENT_ID = os.environ['YOUR_ENVIRONMENT_ID_HERE']
 CUSTOMERS_URL = "environments/" + ENVIRONMENT_ID + "/customers"
 SEGMENTS_URL = "environments/" + ENVIRONMENT_ID + "/segments"
 # INSERT YOUR ACCESS TOKEN HERE
-token = os.environ['YOUR_ACCESS_TOKEN_HERE']
-headers = {"Authorization": "Bearer " + token}
+global token
+global headers
 # INSERT YOUR EMAIL AND PASSWORD HERE
 valid_email = os.environ['YOUR_EMAIL_HERE']
 valid_password = os.environ['YOUR_PASSWORD_HERE']
 
 
 def get_login_token():
-    return login(valid_email, valid_password)
+    global headers
+    global token
+    resp = login(valid_email, valid_password)
+    token = resp.json()["access_token"]
+    headers = {"Authorization": "Bearer " + token}
+    return resp
 
 
 def login(email: str, password: str):
