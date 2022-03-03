@@ -51,6 +51,7 @@ jobs:
           CYPRESS_ACCESS: ${{secrets.CYPRESS_ACCESS}}
           CYPRESS_EMAIL: ${{secrets.CYPRESS_EMAIL}}
           CYPRESS_PASSWORD: ${{secrets.CYPRESS_PASSWORD}}
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
         with:
           install: npm install
           test: npm test
