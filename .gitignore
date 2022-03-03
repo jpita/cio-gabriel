@@ -1,2 +1,4 @@
 .idea
 
+cypress/screenshots
+cypress/videos

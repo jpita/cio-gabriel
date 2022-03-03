@@ -1,0 +1,8 @@
+   
+{
+    "videoUploadOnPasses": false,
+    "baseUrl": "https://fly.customer.io",
+    "video": false,
+    "watchForFileChanges": true,
+    "defaultCommandTimeout": 8000
+  }
