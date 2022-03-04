@@ -46,13 +46,11 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v2
         env:
           CYPRESS_ACCESS: ${{secrets.CYPRESS_ACCESS}}
           CYPRESS_EMAIL: ${{secrets.CYPRESS_EMAIL}}
           CYPRESS_PASSWORD: ${{secrets.CYPRESS_PASSWORD}}
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-        with:
-          install: npm install
-          test: npm test
+        run: |
+          npm i && npm t
           
