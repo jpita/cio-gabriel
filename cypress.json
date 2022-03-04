@@ -1,0 +1,9 @@
+   
+{
+    "videoUploadOnPasses": true,
+    "baseUrl": "https://fly.customer.io",
+    "video": true,
+    "watchForFileChanges": false,
+    "defaultCommandTimeout": 10000,
+    "projectId": "8fb448"
+  }
